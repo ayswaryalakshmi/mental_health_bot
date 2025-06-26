@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBot - Mental Health Support</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="bot-avatar">🤖</div>
+            <div class="header-text">
+                <h2>MindBot</h2>
+                <p>Your compassionate mental health companion</p>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>Online</span>
+            </div>
+        </div>
+
+        <!-- Chat Box -->
+        <div id="chat-box" class="chat-box">
+            <div class="welcome-message">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hello! I'm MindBot, your mental health support companion. 🌟</p>
+                        <p>I'm here to listen, provide support, and suggest helpful exercises. Feel free to share what's on your mind - this is a safe space.</p>
+                        <p><em>Remember: I'm here for support, but if you're in crisis, please contact a mental health professional or emergency services.</em></p>
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="typing-indicator" style="display: none;">
+            <div class="message bot-message">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Share what's on your mind..." maxlength="500">
+                <button id="send-btn" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <div class="quick-actions">
+                <button class="quick-btn" data-message="I'm feeling overwhelmed with work">😰 Overwhelmed</button>
+                <button class="quick-btn" data-message="I'm having trouble sleeping">😴 Sleep Issues</button>
+                <button class="quick-btn" data-message="I'm feeling anxious about the future">😟 Anxious</button>
+                <button class="quick-btn" data-message="I need some breathing exercises">🫁 Breathing Help</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crisis Resources Modal -->
+    <div id="crisis-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>🆘 Crisis Resources</h3>
+            <p>If you're experiencing a mental health crisis, please reach out for immediate help:</p>
+            <ul>
+                <li><strong>National Suicide Prevention Lifeline:</strong> 988</li>
+                <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+                <li><strong>SAMHSA National Helpline:</strong> 1-800-662-4357</li>
+                <li><strong>Emergency Services:</strong> 911</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
